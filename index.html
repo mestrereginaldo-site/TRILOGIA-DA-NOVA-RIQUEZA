@@ -45,6 +45,8 @@
                         'float': 'float 6s ease-in-out infinite',
                         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'shine': 'shine 2s linear infinite',
+                        'toast-in': 'toast-in 0.5s ease-out',
+                        'toast-out': 'toast-out 0.5s ease-in forwards',
                     },
                     keyframes: {
                         float: {
@@ -54,7 +56,15 @@
                         shine: {
                             '0%': { backgroundPosition: '200% center' },
                             '100%': { backgroundPosition: '-200% center' },
-                        }
+                        },
+                        'toast-in': {
+                            '0%': { transform: 'translateX(-100%)', opacity: 0 },
+                            '100%': { transform: 'translateX(0)', opacity: 1 },
+                        },
+                        'toast-out': {
+                            '0%': { transform: 'translateX(0)', opacity: 1 },
+                            '100%': { transform: 'translateX(-100%)', opacity: 0 },
+                        },
                     }
                 }
             }
@@ -107,9 +117,87 @@
             border-color: #22d3ee;
             box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
         }
+
+        /* Notificações de compra */
+        .toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 320px;
+            width: 100%;
+            pointer-events: none;
+        }
+
+        .toast-message {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            border-radius: 12px;
+            padding: 12px 16px;
+            color: white;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 0 15px rgba(34, 211, 238, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateX(0);
+            animation: toast-in 0.5s ease-out;
+            pointer-events: auto;
+            border-left: 4px solid #22d3ee;
+        }
+
+        .toast-message.toast-out {
+            animation: toast-out 0.5s ease-in forwards;
+        }
+
+        .toast-icon {
+            background: #22d3ee20;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #22d3ee;
+        }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-name {
+            font-weight: 700;
+            color: white;
+        }
+
+        .toast-product {
+            color: #22d3ee;
+            font-weight: 600;
+        }
+
+        .toast-time {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            margin-top: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .toast-container {
+                bottom: 10px;
+                left: 10px;
+                max-width: calc(100% - 20px);
+            }
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
+
+    <!-- NOTIFICAÇÕES DE COMPRA (PROVA SOCIAL DINÂMICA) -->
+    <div class="toast-container" id="toastContainer"></div>
 
     <!-- NAVBAR -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
@@ -592,6 +680,76 @@
                 }
             });
         });
+
+        // SISTEMA DE NOTIFICAÇÕES DE COMPRA (PROVA SOCIAL)
+        (function() {
+            const container = document.getElementById('toastContainer');
+            if (!container) return;
+
+            const nomes = [
+                "Carlos Eduardo", "Ana Paula", "Marcos Vinícius", "Juliana Costa", 
+                "Roberto Almeida", "Fernanda Lima", "Ricardo Mendes", "Patrícia Oliveira",
+                "Gustavo Henrique", "Luciana Santos", "André Luiz", "Camila Rocha",
+                "Fábio Júnior", "Renata Souza", "Thiago Fernandes", "Aline Barbosa",
+                "Leandro Cardoso", "Vanessa Duarte", "Daniel Martins", "Sílvia Costa",
+                "João Pedro", "Mariana Flores", "Rafaela Gomes", "Bruno Cavalcanti"
+            ];
+
+            const cidades = [
+                "São Paulo", "Rio de Janeiro", "Belo Horizonte", "Curitiba",
+                "Porto Alegre", "Brasília", "Salvador", "Fortaleza",
+                "Recife", "Manaus", "Campinas", "Florianópolis",
+                "Goiânia", "Belém", "Vitória", "Natal",
+                "Maceió", "João Pessoa", "São Luís", "Cuiabá"
+            ];
+
+            const produtos = [
+                "Trilogia da Nova Riqueza",
+                "O Código do Atalho",
+                "A Alavanca Infinita",
+                "A Moeda do Tempo"
+            ];
+
+            function getRandomItem(arr) {
+                return arr[Math.floor(Math.random() * arr.length)];
+            }
+
+            function createToast() {
+                const nome = getRandomItem(nomes);
+                const cidade = getRandomItem(cidades);
+                const produto = getRandomItem(produtos);
+                
+                const toast = document.createElement('div');
+                toast.className = 'toast-message';
+                toast.innerHTML = `
+                    <div class="toast-icon">
+                        <i data-lucide="shopping-cart" width="16" height="16"></i>
+                    </div>
+                    <div class="toast-content">
+                        <div><span class="toast-name">${nome}</span> <span class="text-slate-400">de</span> <span class="toast-city font-medium text-slate-300">${cidade}</span></div>
+                        <div class="toast-product">${produto}</div>
+                        <div class="toast-time">há poucos segundos</div>
+                    </div>
+                `;
+                
+                container.appendChild(toast);
+                lucide.createIcons({ icons: ['shopping-cart'], attrs: { class: ['toast-icon'] } }, toast);
+                
+                // Auto-remover após 8 segundos
+                setTimeout(() => {
+                    toast.classList.add('toast-out');
+                    setTimeout(() => {
+                        if (toast.parentNode) toast.remove();
+                    }, 500);
+                }, 8000);
+            }
+
+            // Mostrar uma notificação imediatamente após o carregamento
+            setTimeout(createToast, 2000);
+            
+            // A cada 10-15 segundos, mostrar uma nova notificação
+            setInterval(createToast, 10000 + Math.random() * 5000);
+        })();
     </script>
 </body>
 </html>
