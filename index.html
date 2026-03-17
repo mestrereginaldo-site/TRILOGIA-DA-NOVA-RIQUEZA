@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Trilogia da Nova Riqueza - A Liberdade é um Sistema">
     <meta property="og:description" content="Descubra como transformar seu conhecimento em ativos perpétuos com a Trilogia do Dr. Reginaldo Oliveira.">
-    <meta property="og:image" content="img/social_share.jpg">
+    <meta property="og:image" content="capa_livro2.png"> <!-- Ajuste para uma imagem de share -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,18 +29,17 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#020617',    // Slate 950 (Fundo Profundo)
-                            surface: '#0f172a', // Slate 900 (Cards/Seções)
-                            accent: '#22d3ee',  // Cyan 400 (Tecnologia/IA)
-                            glow: '#0891b2',    // Cyan 600 (Brilho)
-                            gold: '#fbbf24',    // Amber 400 (Riqueza/Conversão)
-                            goldDark: '#d97706' // Amber 600 (Sombras Douradas)
+                            dark: '#020617',    // Slate 950
+                            surface: '#0f172a', // Slate 900
+                            accent: '#22d3ee',  // Cyan 400
+                            glow: '#0891b2',    // Cyan 600
+                            gold: '#fbbf24',    // Amber 400
+                            goldDark: '#d97706' // Amber 600
                         }
                     },
                     boxShadow: {
                         'neon': '0 0 25px rgba(34, 211, 238, 0.25), 0 0 10px rgba(34, 211, 238, 0.1)',
                         'gold': '0 0 25px rgba(251, 191, 36, 0.25), 0 0 10px rgba(251, 191, 36, 0.1)',
-                        'float': '0 20px 50px -12px rgba(0, 0, 0, 0.5)'
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
@@ -56,9 +55,6 @@
                             '0%': { backgroundPosition: '200% center' },
                             '100%': { backgroundPosition: '-200% center' },
                         }
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
                     }
                 }
             }
@@ -68,8 +64,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        /* Estilos Customizados para Glassmorphism e Efeitos 3D */
-       .glass-panel {
+        .glass-panel {
             background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
@@ -77,48 +72,47 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
         
-       .text-gradient-tech {
+        .text-gradient-tech {
             background: linear-gradient(135deg, #22d3ee 0%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-       .text-gradient-gold {
+        .text-gradient-gold {
             background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        /* Mockup 3D dos Livros */
-       .book-wrapper {
-            perspective: 1000px;
-            transform-style: preserve-3d;
-        }
-       .book-spine {
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 40px;
-            transform: rotateY(-90deg) translateX(-20px); /* Ajuste de profundidade */
-            transform-origin: left;
-            background: linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.1));
-            z-index: 1;
-        }
-        
-        /* Grid de Fundo Futurista */
-       .cyber-grid {
+        .cyber-grid {
             background-size: 50px 50px;
             background-image: linear-gradient(to right, rgba(34, 211, 238, 0.05) 1px, transparent 1px),
                               linear-gradient(to bottom, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
+
+        /* Estilo para o formulário de lead */
+        .lead-input {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            width: 100%;
+            transition: all 0.2s;
+        }
+        .lead-input:focus {
+            outline: none;
+            border-color: #22d3ee;
+            box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-slate-300 font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-dark">
 
+    <!-- NAVBAR -->
     <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
         <div class="glass-panel border-b border-white/5">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -133,8 +127,8 @@
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-center space-x-8">
                             <a href="#trilogia" class="text-sm font-medium hover:text-brand-accent transition-colors">A Trilogia</a>
-                            <a href="#metodo" class="text-sm font-medium hover:text-brand-accent transition-colors">O Método</a>
                             <a href="#autor" class="text-sm font-medium hover:text-brand-accent transition-colors">Sobre</a>
+                            <a href="#faq" class="text-sm font-medium hover:text-brand-accent transition-colors">FAQ</a>
                             <a href="#oferta" class="bg-brand-accent hover:bg-white hover:scale-105 text-brand-dark px-5 py-2.5 rounded-full text-sm font-bold shadow-neon transition-all duration-300 flex items-center gap-2">
                                 <i data-lucide="shopping-bag" class="w-4 h-4"></i>
                                 Adquirir Agora
@@ -143,7 +137,7 @@
                     </div>
 
                     <div class="md:hidden">
-                        <button class="text-white hover:text-brand-accent transition-colors p-2">
+                        <button class="text-white hover:text-brand-accent transition-colors p-2" onclick="alert('Menu mobile: implementar com JavaScript')">
                             <i data-lucide="menu" class="w-6 h-6"></i>
                         </button>
                     </div>
@@ -152,6 +146,7 @@
         </div>
     </nav>
 
+    <!-- HEADER / HERO -->
     <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute top-0 w-full h-full cyber-grid"></div>
@@ -196,25 +191,28 @@
                             <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-brand-dark flex items-center justify-center text-[10px] text-white font-bold">AL</div>
                             <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-brand-dark flex items-center justify-center text-[10px] text-white font-bold">JP</div>
                         </div>
-                        <p>Junte-se a +1.200 Profissionais da Nova Riqueza</p>
+                        <p>Junte-se a <span class="text-white font-bold">+1.200</span> Profissionais da Nova Riqueza</p>
                     </div>
                 </div>
 
+                <!-- LIVROS 3D (mesmo código, apenas ajuste nos caminhos das imagens) -->
                 <div class="relative lg:h-[600px] flex items-center justify-center animate-float">
                     <div class="relative w-full max-w-lg aspect-[4/3] group">
                         <div class="absolute inset-0 bg-gradient-to-r from-brand-accent to-brand-gold opacity-20 blur-3xl rounded-full group-hover:opacity-30 transition-opacity duration-700"></div>
                         
                         <div class="relative w-full h-full flex items-end justify-center perspective-1000">
                             
+                            <!-- Livro 1 -->
                             <div class="w-40 h-60 bg-slate-800 rounded-r-lg shadow-2xl transform -rotate-y-12 translate-x-12 translate-y-4 z-10 border-l-4 border-slate-600 relative overflow-hidden group-hover:-translate-x-2 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-20"></div>
                                 <div class="p-4 flex flex-col h-full justify-between relative z-30">
                                     <span class="text-[10px] uppercase tracking-widest text-slate-400">Vol I</span>
                                     <h3 class="font-black text-white text-lg leading-tight">O CÓDIGO<br>DO ATALHO</h3>
                                 </div>
-                                <img src="img/capa_livro1.png" onerror="this.src='https://placehold.co/300x450/1e293b/FFF?text=Capa+1'" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Capa O Código do Atalho">
+                                <img src="capa_livro1.png" alt="Capa O Código do Atalho" class="absolute inset-0 w-full h-full object-cover opacity-60">
                             </div>
 
+                            <!-- Livro 2 (central) -->
                             <div class="w-48 h-72 bg-slate-800 rounded-r-lg shadow-2xl transform z-20 border-l-4 border-slate-600 relative overflow-hidden group-hover:-translate-y-4 transition-transform duration-500 shadow-neon">
                                 <div class="absolute top-0 right-0 bg-brand-accent text-brand-dark text-[10px] font-bold px-2 py-1 z-40">BEST-SELLER</div>
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-20"></div>
@@ -222,16 +220,17 @@
                                     <span class="text-xs uppercase tracking-widest text-brand-accent">Vol II</span>
                                     <h3 class="font-black text-white text-2xl leading-tight">A ALAVANCA<br><span class="text-brand-accent">INFINITA</span></h3>
                                 </div>
-                                <img src="img/capa_livro2.png" onerror="this.src='https://placehold.co/300x450/0f172a/22d3ee?text=Capa+2'" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Capa A Alavanca Infinita">
+                                <img src="capa_livro2.png" alt="Capa A Alavanca Infinita" class="absolute inset-0 w-full h-full object-cover opacity-60">
                             </div>
 
+                            <!-- Livro 3 -->
                             <div class="w-40 h-60 bg-slate-800 rounded-r-lg shadow-2xl transform rotate-y-12 -translate-x-12 translate-y-4 z-10 border-l-4 border-slate-600 relative overflow-hidden group-hover:translate-x-2 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-20"></div>
                                 <div class="p-4 flex flex-col h-full justify-between relative z-30">
                                     <span class="text-[10px] uppercase tracking-widest text-brand-gold">Vol III</span>
                                     <h3 class="font-black text-white text-lg leading-tight text-brand-gold">A MOEDA<br>DO TEMPO</h3>
                                 </div>
-                                <img src="img/capa_livro3.png" onerror="this.src='https://placehold.co/300x450/000/fbbf24?text=Capa+3'" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Capa A Moeda do Tempo">
+                                <img src="capa_livro3.png" alt="Capa A Moeda do Tempo" class="absolute inset-0 w-full h-full object-cover opacity-60">
                             </div>
                         </div>
                     </div>
@@ -240,6 +239,7 @@
         </div>
     </header>
 
+    <!-- SELOS DE CONFIANÇA -->
     <div class="border-y border-white/5 bg-brand-surface py-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Método validado por profissionais de elite</p>
@@ -252,6 +252,7 @@
         </div>
     </div>
 
+    <!-- MANIFESTO -->
     <section id="manifesto" class="py-24 bg-brand-dark relative">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="prose prose-invert prose-lg mx-auto">
@@ -282,6 +283,7 @@
         </div>
     </section>
 
+    <!-- TRILOGIA (cards) -->
     <section id="trilogia" class="py-24 bg-brand-surface relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 blur-3xl pointer-events-none"></div>
         
@@ -293,7 +295,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                
+                <!-- Card 1 -->
                 <article class="glass-panel rounded-2xl p-8 hover:border-brand-accent/30 transition-all group relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-slate-700 group-hover:bg-white transition-colors"></div>
                     <div class="mb-6 relative">
@@ -304,15 +306,16 @@
                         <p class="text-xs font-bold text-slate-500 uppercase mt-1">O Mindset da Ruptura</p>
                     </div>
                     <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                        Esqueça a falácia do "trabalho duro". Aprenda a matemática do milhão e por que a preguiça estratégica é a virtude dos novos ricos. O manual para explodir crenças limitantes.
+                        Esqueça a falácia do "trabalho duro". Aprenda a matemática do milhão e por que a preguiça estratégica é a virtude dos novos ricos.
                     </p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4"></i> A Matemática do Milhão</li>
-                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4"></i> Egoísmo Virtuoso</li>
-                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4"></i> O Protocolo de Saída</li>
+                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> A Matemática do Milhão</li>
+                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> Egoísmo Virtuoso</li>
+                        <li class="flex gap-2"><i data-lucide="check-circle" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> O Protocolo de Saída</li>
                     </ul>
                 </article>
 
+                <!-- Card 2 (Destaque) -->
                 <article class="glass-panel rounded-2xl p-8 border-brand-accent/30 shadow-neon bg-gradient-to-b from-brand-surface to-brand-dark relative transform md:-translate-y-6 z-10">
                     <div class="absolute top-0 right-0 bg-brand-accent text-brand-dark text-xs font-bold px-3 py-1 rounded-bl-lg">
                         FERRAMENTA TÁTICA
@@ -325,15 +328,16 @@
                         <p class="text-xs font-bold text-brand-accent uppercase mt-1">Tecnologia & IA</p>
                     </div>
                     <p class="text-slate-300 mb-6 text-sm leading-relaxed">
-                        O manual prático. Como usar Inteligência Artificial para clonar sua voz, criar vídeos e automatizar vendas. Crie um "Cérebro Externo" que trabalha enquanto você dorme.
+                        O manual prático. Como usar Inteligência Artificial para clonar sua voz, criar vídeos e automatizar vendas.
                     </p>
                     <ul class="space-y-3 text-sm text-white font-medium">
-                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4"></i> O Prompt P.A.R.E. de Engenharia</li>
-                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4"></i> Clonagem de Voz e Vídeo</li>
-                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4"></i> Automação "Sem Código"</li>
+                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> O Prompt P.A.R.E.</li>
+                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> Clonagem de Voz e Vídeo</li>
+                        <li class="flex gap-2"><i data-lucide="zap" class="text-brand-accent w-4 h-4 flex-shrink-0"></i> Automação "Sem Código"</li>
                     </ul>
                 </article>
 
+                <!-- Card 3 -->
                 <article class="glass-panel rounded-2xl p-8 hover:border-brand-gold/50 transition-all group relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-1 h-full bg-slate-700 group-hover:bg-brand-gold transition-colors"></div>
                     <div class="mb-6">
@@ -344,26 +348,47 @@
                         <p class="text-xs font-bold text-brand-gold uppercase mt-1">O Sistema Final</p>
                     </div>
                     <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                        O protocolo de consolidação. Transforme seu conhecimento em ativos digitais perpétuos. O fim da prospecção manual e o início do "Vendedor Imortal".
+                        O protocolo de consolidação. Transforme seu conhecimento em ativos digitais perpétuos.
                     </p>
                     <ul class="space-y-3 text-sm text-slate-300">
-                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4"></i> O Ecossistema de Conversão</li>
-                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4"></i> Anatomia do Ativo Digital</li>
-                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4"></i> O Escritório na Mochila</li>
+                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4 flex-shrink-0"></i> Ecossistema de Conversão</li>
+                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4 flex-shrink-0"></i> Anatomia do Ativo Digital</li>
+                        <li class="flex gap-2"><i data-lucide="hourglass" class="text-brand-gold w-4 h-4 flex-shrink-0"></i> O Escritório na Mochila</li>
                     </ul>
                 </article>
-
             </div>
         </div>
     </section>
 
+    <!-- LEAD MAGNET (CAPTURA DE E-MAIL) - NOVO -->
+    <section class="py-16 bg-gradient-to-b from-brand-dark to-brand-surface border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="glass-panel p-8 md:p-12 rounded-2xl">
+                <i data-lucide="download" class="w-12 h-12 text-brand-accent mx-auto mb-4"></i>
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">Quer um gostinho do conteúdo?</h3>
+                <p class="text-slate-400 mb-6 max-w-2xl mx-auto">Baixe gratuitamente o <strong>primeiro capítulo de "A Alavanca Infinita"</strong> e descubra como começar a automatizar seu trabalho hoje mesmo.</p>
+                
+                <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto" action="SEU_LINK_DE_CAPTURA" method="POST">
+                    <input type="text" name="nome" placeholder="Seu nome" required class="lead-input flex-1">
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required class="lead-input flex-1">
+                    <button type="submit" class="px-8 py-3 bg-brand-accent hover:bg-white text-brand-dark font-bold rounded-lg transition-all whitespace-nowrap">
+                        Quero meu capítulo grátis
+                    </button>
+                </form>
+                <p class="text-xs text-slate-600 mt-4">Prometemos não enviar spam. Você pode cancelar a qualquer momento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTOR -->
     <section id="autor" class="py-24 bg-brand-dark border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="w-full md:w-5/12 relative group">
                     <div class="absolute inset-0 bg-brand-accent/20 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                     <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-slate-800 grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <img src="img/foto_reginaldo.png" onerror="this.src='https://placehold.co/600x800/1e293b/FFF?text=Foto+Dr.+Reginaldo'" alt="Dr. Reginaldo Oliveira" class="object-cover w-full h-full">
+                        <!-- Coloque sua foto como "foto_reginaldo.png" -->
+                        <img src="foto_reginaldo.png" alt="Dr. Reginaldo Oliveira" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/600x800/1e293b/22d3ee?text=Foto+Dr.+Reginaldo'">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent h-40"></div>
                         <div class="absolute bottom-6 left-6">
                             <p class="text-white font-black text-2xl">Dr. Reginaldo Oliveira</p>
@@ -405,6 +430,7 @@
         </div>
     </section>
 
+    <!-- OFERTA PRINCIPAL -->
     <section id="oferta" class="py-24 relative overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-brand-surface to-brand-dark z-0"></div>
         
@@ -467,7 +493,8 @@
                         </div>
                     </div>
 
-                    <a href="LINK_DO_CHECKOUT_AQUI" class="relative w-full group overflow-hidden bg-gradient-to-r from-brand-accent to-blue-600 text-white font-black text-2xl py-6 rounded-xl shadow-neon transition-all hover:scale-[1.01] flex items-center justify-center gap-3">
+                    <!-- BOTÃO DE COMPRA - SUBSTITUA O LINK ABAIXO -->
+                    <a href="SEU_LINK_DO_CHECKOUT_AQUI" class="relative w-full group overflow-hidden bg-gradient-to-r from-brand-accent to-blue-600 text-white font-black text-2xl py-6 rounded-xl shadow-neon transition-all hover:scale-[1.01] flex items-center justify-center gap-3">
                         <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine"></div>
                         <span>COMPRAR AGORA E LIBERTAR MEU TEMPO</span>
                         <i data-lucide="arrow-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform"></i>
@@ -483,11 +510,12 @@
         </div>
     </section>
 
-    <section class="py-24 bg-brand-surface">
+    <!-- FAQ -->
+    <section id="faq" class="py-24 bg-brand-surface">
         <div class="max-w-3xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
             
-            <div class="space-y-4">
+            <div class="space-y-4" x-data="{ open1: false, open2: false, open3: false }">
                 <div class="glass-panel rounded-xl overflow-hidden">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center text-white font-medium hover:bg-white/5 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span>Para quem é esta trilogia?</span>
@@ -519,6 +547,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="bg-brand-dark py-12 border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="text-slate-500 text-sm">
@@ -531,6 +560,9 @@
                 <a href="mailto:suporte@advogadonomade.com.br" class="hover:text-brand-accent transition-colors">Suporte</a>
             </div>
             <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/dr-reginaldo-oliveira-64681a3b2/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition-all">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
                 <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand-accent hover:text-brand-dark transition-all">
                     <i data-lucide="instagram" class="w-5 h-5"></i>
                 </a>
@@ -544,7 +576,7 @@
     <script>
         lucide.createIcons();
         
-        // Efeito de Navbar Glass no Scroll
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -552,6 +584,17 @@
             } else {
                 nav.classList.remove('py-0');
             }
+        });
+
+        // Smooth scroll para links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
 </body>
