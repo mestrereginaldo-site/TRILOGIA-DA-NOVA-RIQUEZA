@@ -10,7 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Trilogia da Nova Riqueza - A Liberdade é um Sistema">
     <meta property="og:description" content="Descubra como transformar seu conhecimento em ativos perpétuos com a Trilogia do Dr. Reginaldo Oliveira.">
-    <meta property="og:image" content="capa_livro2.png"> <!-- Ajuste para uma imagem de share -->
+    <meta property="og:image" content="capa_livro2.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +29,12 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#020617',    // Slate 950
-                            surface: '#0f172a', // Slate 900
-                            accent: '#22d3ee',  // Cyan 400
-                            glow: '#0891b2',    // Cyan 600
-                            gold: '#fbbf24',    // Amber 400
-                            goldDark: '#d97706' // Amber 600
+                            dark: '#020617',
+                            surface: '#0f172a',
+                            accent: '#22d3ee',
+                            glow: '#0891b2',
+                            gold: '#fbbf24',
+                            goldDark: '#d97706'
                         }
                     },
                     boxShadow: {
@@ -93,7 +93,6 @@
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
 
-        /* Estilo para o formulário de lead */
         .lead-input {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
@@ -195,7 +194,7 @@
                     </div>
                 </div>
 
-                <!-- LIVROS 3D (mesmo código, apenas ajuste nos caminhos das imagens) -->
+                <!-- LIVROS 3D -->
                 <div class="relative lg:h-[600px] flex items-center justify-center animate-float">
                     <div class="relative w-full max-w-lg aspect-[4/3] group">
                         <div class="absolute inset-0 bg-gradient-to-r from-brand-accent to-brand-gold opacity-20 blur-3xl rounded-full group-hover:opacity-30 transition-opacity duration-700"></div>
@@ -360,7 +359,7 @@
         </div>
     </section>
 
-    <!-- LEAD MAGNET (CAPTURA DE E-MAIL) - NOVO -->
+    <!-- LEAD MAGNET (CAPTURA DE E-MAIL) -->
     <section class="py-16 bg-gradient-to-b from-brand-dark to-brand-surface border-y border-white/5">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <div class="glass-panel p-8 md:p-12 rounded-2xl">
@@ -387,7 +386,6 @@
                 <div class="w-full md:w-5/12 relative group">
                     <div class="absolute inset-0 bg-brand-accent/20 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                     <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative bg-slate-800 grayscale group-hover:grayscale-0 transition-all duration-700">
-                        <!-- Coloque sua foto como "foto_reginaldo.png" -->
                         <img src="foto_reginaldo.png" alt="Dr. Reginaldo Oliveira" class="object-cover w-full h-full" onerror="this.src='https://placehold.co/600x800/1e293b/22d3ee?text=Foto+Dr.+Reginaldo'">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent h-40"></div>
                         <div class="absolute bottom-6 left-6">
@@ -493,7 +491,7 @@
                         </div>
                     </div>
 
-                    <!-- BOTÃO DE COMPRA - SUBSTITUA O LINK ABAIXO -->
+                    <!-- BOTÃO DE COMPRA - SUBSTITUA O LINK -->
                     <a href="SEU_LINK_DO_CHECKOUT_AQUI" class="relative w-full group overflow-hidden bg-gradient-to-r from-brand-accent to-blue-600 text-white font-black text-2xl py-6 rounded-xl shadow-neon transition-all hover:scale-[1.01] flex items-center justify-center gap-3">
                         <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:animate-shine"></div>
                         <span>COMPRAR AGORA E LIBERTAR MEU TEMPO</span>
@@ -515,7 +513,7 @@
         <div class="max-w-3xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-white text-center mb-12">Perguntas Frequentes</h2>
             
-            <div class="space-y-4" x-data="{ open1: false, open2: false, open3: false }">
+            <div class="space-y-4">
                 <div class="glass-panel rounded-xl overflow-hidden">
                     <button class="w-full px-6 py-4 text-left flex justify-between items-center text-white font-medium hover:bg-white/5 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span>Para quem é esta trilogia?</span>
@@ -576,7 +574,6 @@
     <script>
         lucide.createIcons();
         
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -586,7 +583,6 @@
             }
         });
 
-        // Smooth scroll para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
